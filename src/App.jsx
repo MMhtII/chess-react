@@ -8,6 +8,7 @@ function App() {
   const [board, setBoard] = useState([]);
 
   useEffect(() => {
+    
     const subscribe = gameSubject.subscribe((game) => setBoard(game.board));
     return () => subscribe.unsubscribe();
     
