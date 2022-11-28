@@ -1,8 +1,8 @@
 import { Chess } from "chess.js";
 import { BehaviorSubject } from "rxjs";
 
-let promotionMoveFen = "rnb2bnr/pppPKppp/8/4p3/7q/8/pppp1ppp/RNBQKBNR w KQ - 1 5";
-const chess = new Chess(promotionMoveFen);
+// let promotionMoveFen = "rnb2bnr/pppPKppp/8/4p3/7q/8/pppp1ppp/RNBQKBNR w KQ - 1 5";
+const chess = new Chess();
 
 //observer
 export const gameSubject = new BehaviorSubject({
