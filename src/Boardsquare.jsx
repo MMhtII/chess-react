@@ -11,6 +11,7 @@ export default function Boardsquare({ piece, black, position }) {
     drop: (item) => {
       const [fromPosition] = item.id.split("_");
       handleMove(fromPosition, position);
+     
     },
   });
   const [promotion, setPromotion] = useState(null);
@@ -27,7 +28,7 @@ export default function Boardsquare({ piece, black, position }) {
     <div className="board_square" ref={drop}>
       <Square black={black}>
         {promotion ? (
-          <Promote pice={piece} />
+          <Promote promotion={promotion} piece={piece} />
         ) : piece ? (
           <Piece piece={piece} position={position} />
         ) : null}

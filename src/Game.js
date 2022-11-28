@@ -1,15 +1,15 @@
 import { Chess } from "chess.js";
 import { BehaviorSubject } from "rxjs";
 
-// let promotionMoveFen = "rnb2bnr/pppPKppp/8/4p3/7q/8/pppp1ppp/RNBQKBNR-w-KG";
-const chess = new Chess();
+let promotionMoveFen = "rnb2bnr/pppPKppp/8/4p3/7q/8/pppp1ppp/RNBQKBNR w KQ - 1 5";
+const chess = new Chess(promotionMoveFen);
 
 //observer
 export const gameSubject = new BehaviorSubject({
   //observable
   board: chess.board(),
 });
-export function initGame() {
+export function initGame(promotionMoveFen) {
   updateGame();
 }
 
@@ -31,8 +31,12 @@ export function handleMove(from, to) {
   }
 }
 
-export function move(from, to) {
-  const legalMove = chess.move({ from, to });
+export function move(from, to, promotion) {
+let tempMove = {from, to}
+if(promotion){
+  tempMove.promotion = promotion;
+}
+  const legalMove = chess.move(tempMove);
   if (legalMove) {
     updateGame();
   }
