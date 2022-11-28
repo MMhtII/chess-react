@@ -2,7 +2,6 @@ import { Chess } from "chess.js";
 import { BehaviorSubject } from "rxjs";
 
 // let promotionMoveFen = "rnb2bnr/pppPKppp/8/4p3/7q/8/pppp1ppp/RNBQKBNR-w-KG";
-
 const chess = new Chess();
 
 //observer
@@ -26,6 +25,7 @@ export function handleMove(from, to) {
   }
   //pendingPromotion gets value from gameSubject if exists otherwise returns undefiend
   const { pendingPromotion } = gameSubject.getValue();
+
   if (!pendingPromotion) {
     move(from, to);
   }

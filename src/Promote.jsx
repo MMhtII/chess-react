@@ -1,15 +1,5 @@
-import React from 'react';
+import React from "react";
 
-
-export default function Promote() {
-
-
-  return (
-    <div className='promote_box' >
-        <div className='promote_cell' ></div>
-        <div className='promote_cell' ></div>
-        <div className='promote_cell' ></div>
-        <div className='promote_cell' ></div>
-    </div>
-  )
+export default function Promote(piece) {
+  return <div></div>;
 }

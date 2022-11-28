@@ -14,18 +14,20 @@ export default function Boardsquare({ piece, black, position }) {
     },
   });
   const [promotion, setPromotion] = useState(null);
+
   useEffect(() => {
-    
     const subscribe = gameSubject.subscribe(({ pendingPromotion }) => {
-      pendingPromotion.to === position ? setPromotion(pendingPromotion): setPromotion(null);
+      (pendingPromotion && pendingPromotion.to === position)
+        ? setPromotion(pendingPromotion)
+        : setPromotion(null);
     });
-    return () => subscribe.unsubscribe;
+    return () => subscribe.unsubscribe();
   }, []);
   return (
     <div className="board_square" ref={drop}>
       <Square black={black}>
         {promotion ? (
-          <Promote />
+          <Promote pice={piece} />
         ) : piece ? (
           <Piece piece={piece} position={position} />
         ) : null}
