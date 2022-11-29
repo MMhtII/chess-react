@@ -5,12 +5,14 @@ import { useDrop } from "react-dnd";
 import { handleMove, gameSubject } from "./Game";
 import Promote from "./Promote";
 
+
 export default function Boardsquare({ piece, black, position }) {
   const [, drop] = useDrop({
     accept: "piece",
     drop: (item) => {
       const [fromPosition] = item.id.split("_");
       handleMove(fromPosition, position);
+      
      
     },
   });

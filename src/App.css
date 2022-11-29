@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 .container {
   min-height: 100vh;
@@ -35,7 +36,6 @@
   max-width: 70%;
   max-height: 70%;
   cursor: pointer;
-
 }
 .square_black {
   background: #b59963;
@@ -63,4 +63,18 @@
   display: flex;
   width: 100%;
   height: 100%;
+}
+.vertical_text {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  font-family: sans-serif;
+  padding: 10px;
+  color: white;
+}
+.vertical_text button {
+  margin-top: 20px;
+  cursor: pointer;
+  background: rgb(63, 63, 63);
+  border: 2px solid white;
+  border-radius: 10px;
 }
